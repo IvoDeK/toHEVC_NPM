@@ -1,4 +1,7 @@
 const ffmpeg = require('fluent-ffmpeg');
+const fs = require('fs');
+
+if (fs.existsSync(process.cwd() + "/out.mkv")) return console.log('\n\x1b[5m\x1b[30m\x1b[41m✗\x1b[0m \x1b[31mVideo already has been transcoded. If that\'s not true delete the out.mkv file!')
 
 return ffmpeg()
     .input(process.cwd() + '/input.mkv')
